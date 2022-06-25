@@ -1,6 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { publicRoutes } from '../router/routes'
+import { logInAction } from '../store/reducers/authReducer';
 const AuthForm = () =>{
+    const dispatch = useDispatch();
+    const Auth = useSelector(state=>state.Auth.Auth)
+    const login = (e) =>{
+        console.log("login Worked")
+        e.preventDefault();
+        dispatch(logInAction())
+        console.log(Auth)
+    }
+
     return(
         <div>
              <form>
@@ -8,7 +18,7 @@ const AuthForm = () =>{
                 <p>Don't have an account? <Link to = '/registration'>Sign Up</Link></p>
                 <input type="email" placeholder='Email*'/><br />
                 <input type="password" placeholder='Password'/><br />
-                <button>Log In</button>
+                <button onClick = {login}>Log In</button>
             </form>
         </div>
     )

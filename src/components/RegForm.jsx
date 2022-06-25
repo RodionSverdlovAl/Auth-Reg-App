@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+
 const RegForm =() =>{
     return(
         <div>
@@ -10,7 +11,6 @@ const RegForm =() =>{
                 <input type="password" placeholder='Password'/><br />
                 <button>Sing Up</button>
             </form>
-           
         </div>
     )
 }
