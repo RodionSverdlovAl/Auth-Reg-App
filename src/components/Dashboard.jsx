@@ -7,6 +7,7 @@ const Dashboard = () =>{
     const dispatch = useDispatch();
     const logout = () =>{
         dispatch(logOutAction())
+        localStorage.removeItem('auth')
     }
 
     return(

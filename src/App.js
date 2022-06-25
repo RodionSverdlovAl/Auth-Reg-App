@@ -6,12 +6,30 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import {useDispatch, useSelector} from 'react-redux'
+import { logInAction, logOutAction } from './store/reducers/authReducer';
+import { fetchUsers } from './store/asyncActions/users';
  
 function App() {
 
-  const Auth = useSelector(state=>state.Auth.Auth)
+  let Auth =useSelector(state=>state.Auth.Auth)
+
+  const users = useSelector(state=>state.users.users)
+
+  const dispatch = useDispatch();
   
   let navigate = useNavigate();
+
+  useEffect(()=>{
+    dispatch(fetchUsers())
+  },[])
+
+  useEffect(()=>{
+    if(localStorage.getItem('auth')){
+      dispatch(logInAction())
+    }else{
+      dispatch(logOutAction())
+    }
+  },[Auth])
 
   useEffect(() => {
     console.log(Auth)

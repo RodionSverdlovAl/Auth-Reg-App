@@ -14,7 +14,11 @@ form{
     background-color: white;
     margin-top: 100px;
     height: 350px;
-    
+    .error{
+        color: red;
+        text-align: center;
+        background-color: white;
+    }
     h1{
         padding-top: 30px;
         text-align: center;
