@@ -1,17 +1,22 @@
 {
     "users" : [
         {
+            "name":"Rodion Sverdlov",
             "email": "rsverdlovalexandrovich@gmail.com",
             "password": "simplepassword123"
         },
         {
+            "name":"Valeriy Jmeshenko",
             "email": "borrowValeriy@gmail.com",
             "password": "borrow54"
         },
         {
+            "name":"Billy Harington",
             "email": "billyharrrrington@gmail.com",
             "password": "gayporno123"
-        },{
+        },
+        {
+            "name":"Churka Ebanaya",
             "email": "zaebal@gmail.com",
             "password": "elbliviypassword"
         }

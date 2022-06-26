@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { logInAction } from '../store/reducers/authReducer';
 import { useEffect } from 'react';
 import { fetchUsers } from '../store/asyncActions/users';
+import { setCurrentUserAction } from '../store/reducers/currentUserReducer';
 const AuthForm = () =>{
     const dispatch = useDispatch();
     const Auth = useSelector(state=>state.Auth.Auth)
@@ -27,6 +28,11 @@ const AuthForm = () =>{
                 dispatch(logInAction())
                 console.log(Auth)
                 localStorage.setItem('auth','true')
+
+                localStorage.setItem('userEmail', users[i].email)
+                localStorage.setItem('userName', users[i].name)
+                
+                dispatch(setCurrentUserAction(users[i]))
             }
         }
         setError(true)
@@ -42,7 +48,6 @@ const AuthForm = () =>{
                 <input type="email" value={email} onChange = {e=>setEmail(e.target.value)}  placeholder='Email*'/><br />
                 <input type="password" value={password} onChange = {e=>setPassword(e.target.value)} placeholder='Password'/><br />
                 <button onClick = {login}>Log In</button>
-                
             </form>
         </div>
     )

@@ -59,3 +59,67 @@ form{
         cursor: pointer
     }
 }
+$light-blue: rgb(215, 239, 255);
+.Dashboard{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    height: 580px;
+    position: relative;
+    top: 20px;
+    .user_info{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: $light-blue;
+        width: 800px;
+        height: 80px;
+        h3{
+            background-color: $light-blue;
+            padding-top: 10px;
+            margin-left: 20px;
+        }
+        p{
+            background-color: $light-blue;
+            margin: 20px;
+        }
+    }
+    .sidebar{
+        position: absolute;
+        background-color: white;
+        top: 150px;
+        left: 40px;
+        h2{
+            background-color: white;
+            margin: 0 0 20px 0px;
+        }
+        .link{
+            background-color: rgb(255, 255, 255);
+            width: 180px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            position: relative;
+            a{
+                text-decoration: none;
+                font-weight: 800;
+                position: absolute;
+                left: 0px;
+                top: 15px;
+                text-align: center;
+                background-color: white;
+                color: $blue-color;
+                .active{
+                    background-color: $light-blue;
+                }
+            }
+        }
+        button{
+            margin-top: 20px;
+        }
+    }
+    button{
+        cursor: pointer;
+    }
+}

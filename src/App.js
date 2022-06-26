@@ -7,21 +7,14 @@ import { useEffect, useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import {useDispatch, useSelector} from 'react-redux'
 import { logInAction, logOutAction } from './store/reducers/authReducer';
-import { fetchUsers } from './store/asyncActions/users';
  
 function App() {
 
   let Auth =useSelector(state=>state.Auth.Auth)
-
-  const users = useSelector(state=>state.users.users)
-
   const dispatch = useDispatch();
-  
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    dispatch(fetchUsers())
-  },[])
+ 
 
   useEffect(()=>{
     if(localStorage.getItem('auth')){
